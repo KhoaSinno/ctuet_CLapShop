@@ -68,13 +68,14 @@
                 <a class="btn btn-add btn-sm" title="Thêm" href="{{ route('admin.product.detail.edit', ['id' => $p->id]) }}">
                     <i class="fas fa-edit"></i>
                 </a>
-                <form class="d-inline" action="{{ route('admin.product.delete', ['id' => $p->id]) }}" method="POST">
+                <form class="d-inline delete-form" action="{{ route('admin.product.delete', ['id' => $p->id]) }}" method="POST">
                     @csrf
                     @method('POST')
-                    <button type="submit" class="btn btn-warning btn-sm" title="Xóa">
+                    <button type="button" class="btn btn-warning btn-sm delete-btn" title="Xóa">
                         <i class="fa fa-lock" aria-hidden="true"></i>
                     </button>
                 </form>
+
 
             </td>
         </tr>
@@ -87,7 +88,36 @@
 
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lấy tất cả các nút xóa
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+
+        deleteButtons.forEach((button) => {
+            button.addEventListener('click', function(e) {
+                const form = this.closest('.delete-form');
+
+                // Sử dụng SweetAlert v1.x để xác nhận
+                swal({
+                    title: 'Bạn có chắc chắn?',
+                    text: "Hành động này không thể hoàn tác!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Xóa',
+                    cancelButtonText: 'Hủy'
+                }, function(isConfirm) {
+                    if (isConfirm) {
+                        form.submit(); // Gửi form nếu người dùng xác nhận
+                    }
+                });
+            });
+        });
+    });
+</script>
 
 <!-- <script>
     $(document).ready(function() {

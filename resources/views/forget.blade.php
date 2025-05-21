@@ -46,23 +46,12 @@
                             </label>
                         </div> -->
                         <div class="container-login100-form-btn">
-                            <button type="submit" class="btn btn-info w-100"
-
-                                style="padding: 10px 20px; border-radius: 5px; font-size: 16px;">Gửi email</button>
-
+                            <button type="submit" class="btn btn-info w-100 custom-btn-size">Gửi email</button>
                         </div>
 
                         <div class="container-login100-form-btn mt-2">
-                            <a href="javascript:history.back()" class="btn btn-secondary w-100" style="background-color: gray; 
-                        transition: background-color 0.3s ease, color 0.3s ease; 
-                        padding: 10px 20px; 
-                        border-radius: 5px; 
-                        font-size: 16px;" onmouseover="this.style.backgroundColor='#6c757d'; this.style.color='white';"
-                                onmouseout="this.style.backgroundColor='gray'; this.style.color='white';"
-                                onmousedown="this.style.backgroundColor='#5a6268';"
-                                onmouseup="this.style.backgroundColor='#6c757d';">
-                                Trở lại
-                            </a>
+                            <a href="javascript:history.back()" class="btn btn-secondary w-100 custom-btn-size">Trở
+                                lại</a>
                         </div>
 
                         <div class="text-right p-t-12">

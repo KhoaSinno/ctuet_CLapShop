@@ -49,11 +49,14 @@ class ProfileController extends Controller
         $user->address = $request->input('address');
         $user->gender = $request->input('gender');
         $user->dateOfBirth = $request->input('dateOfBirth');
+        
+        // // Debug user và request
+        // dd($user, $request->input('password'));
 
         // Kiểm tra xem người dùng có thay đổi mật khẩu không
-        // if ($request->filled('password')) {
-        //     $user->password = bcrypt($request->input('password')); // Mã hóa mật khẩu trước khi lưu
-        // }
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->input('password')); // Mã hóa mật khẩu trước khi lưu
+        }
 
         // Lưu lại thông tin
         try {

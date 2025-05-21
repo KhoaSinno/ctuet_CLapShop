@@ -240,9 +240,8 @@
                     },
                     success: function(response) {
                         if (response.success) {
-                            alert('Đơn hàng đã được hủy thành công!');
                             swal({
-                                title: "Đơn hàng đã được hủy thành công!",
+                                title: response.message,
                                 icon: "success",
                                 button: "OK",
                             });

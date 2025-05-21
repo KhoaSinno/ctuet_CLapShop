@@ -84,29 +84,21 @@
             <div class="col-lg-12">
                 <div class="shoping__cart__btns">
                     <a href="{{route('customer.products')}}" class="primary-btn cart-btn">Tiếp tục mua sắm</a>
-                    <!-- <a href="#" class="primary-btn cart-btn cart-btn-right">
-                        <span class="icon_loading"></span>
-                        Upadate Cart</a> -->
                 </div>
             </div>
-            <!-- <div class="col-lg-6">
-                <div class="shoping__continue">
-                    <div class="shoping__discount">
-                        <h5>Discount Codes</h5>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your coupon code">
-                            <button type="submit" class="site-btn">APPLY COUPON</button>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
+
             <div class="col-lg-6">
                 <div class="shoping__checkout">
                     <h5>Tổng giỏ hàng</h5>
                     <ul>
                         <li>Tổng giá (đã tính VAT): <span id="cart-total">{{ $cartTotal}}</span></li>
                     </ul>
-                    <a href="{{route('customer.checkout')}}" class="primary-btn w-100">Tiến hành thanh toán</a>
+                    @if(session()->has('cart') && count(session('cart')) > 0)
+                    <a href="{{ route('customer.checkout') }}" class="primary-btn w-100">Tiến hành thanh toán</a>
+                    @else
+                    <button class="btn btn-block w-100" disabled>Không có sản phẩm trong giỏ hàng</button>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -145,11 +137,6 @@
 
             },
             error: function(xhr) {
-                // if (xhr.status === 400 && xhr.responseJSON && xhr.responseJSON.error) {
-                //     alert(xhr.responseJSON.error);
-                // } else {
-                //     alert('Đã xảy ra lỗi. Vui lòng thử lại!');
-                // }
                 if (xhr.status === 400 && xhr.responseJSON && xhr.responseJSON.error) {
                     // Hiển thị thông báo lỗi nếu có lỗi từ server
                     swal({

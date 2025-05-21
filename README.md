@@ -26,9 +26,12 @@ php artisan migrate:fresh --seed
 - Tìm source template: Admin và Customer
 - Quy định route: Admin và Customer
 - Cài đặt Middleware: Chặn xác thực User trước khi thực hiện chức năng
-- `Quản lý` source code với `Github`
-- Quản lý `Plan` và `Deadline`
 - Lên nội dung cho thuyết trình
+
+### `---Quản lý dự án---`
+
+- Quản lý source code với `Github`
+- Quản lý `Plan` và `Deadline`
 
 ### `---Code Admin side---`
 
@@ -40,6 +43,8 @@ php artisan migrate:fresh --seed
 - Cài đặt `session` để CRUD: Giỏ hàng
 - Lọc sản phẩm bằng slug Category
 
+### `---Hỗ trợ kỹ thuật cho việc báo cáo---`
+
 ## `2. Trường Nguyên - HTTT2211025`
 
 ### `---Nghiên cứu và triển khai công nghệ---`
@@ -47,12 +52,15 @@ php artisan migrate:fresh --seed
 - `Thiết kế database`
 - Đưa ra giả pháp nhập hàng, bán hàng
 - Logic luồng hoạt động
+- Cài đặt thư mục lưu ảnh
 - Đổi mật khẩu
 - Quên mật khẩu
 
 ### `---Code Admin side---`
 
 - `Module`: Sản phẩm (CRUD có hình ảnh)
+- Fix Ajax POS bán hàng
+- Xử lý logic số lượng tồn kho
 
 ### `---Code Customer side---`
 
@@ -75,16 +83,17 @@ php artisan migrate:fresh --seed
 
 - Thiết kế logo, Banner, Icon website
 - Chọn màu chủ đạo cho website
-- Thiết kế Slide báo cáo
 
 ### `---Code Admin side---`
 
-- `Module`: Danh mục (CRUD có hình ảnh), Dashboard
+- `Module`: Danh mục (CRUD có hình ảnh), Dashboard (Biểu đồ Chart)
 
 ### `---Code Customer side---`
 
 - Đưa ra giải pháp và chỉnh sửa: Trang chủ, sản phẩm,
 - Chỉnh sửa UI tĩnh: Liên hệ
+
+### `---Thiết kế Slide báo cáo---`
 
 ## `4. Như Ý - HTTT2211015`
 
@@ -98,10 +107,12 @@ php artisan migrate:fresh --seed
 ### `---Code Customer side---`
 
 - `Module`: Đăng ký, Profile khách hàng
+- Hiện logic các sản phẩm hết hàng
 
 ### `---Kiểm thử---`
 
 - Test toàn bộ chức năng website
+- Phát hiện lỗi và báo cáo
 
 ## `5. Thành Phát - HTTT2211004`
 
@@ -198,3 +209,6 @@ php artisan view:clear
 ### Note's Nguyên kĩ thuật `symbolic link` để thêm link cho nơi lưu trữ file
 
 php artisan storage:link
+
+// Debug user
+dd($user, $request->input('password'));

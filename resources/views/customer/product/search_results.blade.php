@@ -21,68 +21,38 @@
 
                         </ul>
                     </div>
-                    <!--
-                    <div class="sidebar__item">
-                        <h4>Giá</h4>
-                        <form method="GET" action="{{ route('products.filter') }}">
-                            <div class="sidebar__item__size">
-                                <label for="large">
-                                    <input type="radio" id="large" name="price_range" value="0" onchange="this.form.submit()" {{ request('price_range') == '0' ? 'checked' : '' }}>
-                                    <span>&lt; 10tr</span>
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="medium">
-                                    <input type="radio" id="medium" name="price_range" value="1" onchange="this.form.submit()" {{ request('price_range') == '1' ? 'checked' : '' }}>
-                                    <span>10tr - 20tr</span>
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="small">
-                                    <input type="radio" id="small" name="price_range" value="2" onchange="this.form.submit()" {{ request('price_range') == '2' ? 'checked' : '' }}>
-                                    <span>20tr - 30tr</span>
-                                </label>
-                            </div>
-                            <div class="sidebar__item__size">
-                                <label for="tiny">
-                                    <input type="radio" id="tiny" name="price_range" value="3" onchange="this.form.submit()" {{ request('price_range') == '3' ? 'checked' : '' }}>
-                                    <span>&gt; 30tr</span>
-                                </label>
-                            </div>
-                        </form>
-                    </div> -->
                     <div class="sidebar__item">
                         <h4>Giá</h4>
                         <form id="priceFilterForm" action="{{ route('customer.product.filter') }}" method="get">
-            <div class="list-group">
-                <label class="border-0 list-group-item d-flex justify-content-between align-items-center">
-                    <input class="form-check-input me-2" type="radio" name="price_range" value="lower_15" 
-                        onclick="submitPriceFilter()"
-                        {{ request('price_range') == 'lower_15' ? 'checked' : '' }}>
-                    Nhỏ hơn 15 Triệu
-                </label>
+                            <div class="list-group">
+                                <label class="border-0 list-group-item d-flex justify-content-between align-items-center">
+                                    <input class="form-check-input me-2" type="radio" name="price_range" value="lower_15"
+                                        onclick="submitPriceFilter()"
+                                        {{ request('price_range') == 'lower_15' ? 'checked' : '' }}>
+                                    Nhỏ hơn 15 Triệu
+                                </label>
 
-                <label class="border-0 list-group-item d-flex justify-content-between align-items-center">
-                    <input class="form-check-input me-2" type="radio" name="price_range" value="greater_15" 
-                        onclick="submitPriceFilter()"
-                        {{ request('price_range') == 'greater_15' ? 'checked' : '' }}>
-                    Lớn hơn 15 Triệu
-                </label>
+                                <label class="border-0 list-group-item d-flex justify-content-between align-items-center">
+                                    <input class="form-check-input me-2" type="radio" name="price_range" value="greater_15"
+                                        onclick="submitPriceFilter()"
+                                        {{ request('price_range') == 'greater_15' ? 'checked' : '' }}>
+                                    Lớn hơn 15 Triệu
+                                </label>
 
-                <label class="border-0 list-group-item d-flex justify-content-between align-items-center">
-                    <input class="form-check-input me-2" type="radio" name="price_range" value="casual" 
-                        onclick="submitPriceFilter()"
-                        {{ request('price_range') == 'casual' ? 'checked' : '' }}>
-                    Bất kì giá nào
-                </label>
-            </div>
-        </form>
+                                <label class="border-0 list-group-item d-flex justify-content-between align-items-center">
+                                    <input class="form-check-input me-2" type="radio" name="price_range" value="casual"
+                                        onclick="submitPriceFilter()"
+                                        {{ request('price_range') == 'casual' ? 'checked' : '' }}>
+                                    Bất kì giá nào
+                                </label>
+                            </div>
+                        </form>
 
-        <script>
-            function submitPriceFilter() {
-                document.getElementById('priceFilterForm').submit();
-            }
-        </script>
+                        <script>
+                            function submitPriceFilter() {
+                                document.getElementById('priceFilterForm').submit();
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
@@ -218,7 +188,7 @@
                 $('.span__quantity_cart').text(response.totalQuantity);
             },
             error: function(xhr) {
-                alert('Đã xảy ra lỗi. Vui lòng thử lại!');
+                // alert('Đã xảy ra lỗi. Vui lòng thử lại!');
             }
         });
     });

@@ -79,39 +79,29 @@
 
                         <!-- Hiển thị lỗi nếu có -->
                         @if ($errors->any())
-                        <div class="alert"
-                            style="background-color: red; color: black; padding: 10px; border-radius: 5px; margin-top: 15px;">
-                            <strong>Errors:</strong>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                            <div class="alert"
+                                style="background-color: red; color: black; padding: 10px; border-radius: 5px; margin-top: 15px;">
+                                <strong>Errors:</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         @endif
                         <style>
                             .input100::placeholder {
                                 color: rgba(0, 0, 0, 0.5);
                             }
                         </style>
-
                         <div class="container-login100-form-btn">
-                            <button type="submit" class="btn btn-info w-100"
-                                style="padding: 10px 20px; border-radius: 5px; font-size: 15px;">Đăng kí</button>
+                            <button type="submit" class="btn btn-info w-100 custom-btn-size">Đăng kí</button>
                         </div>
 
                         <div class="container-login100-form-btn" style="margin-top: 10px;">
-                            <button class="btn btn-secondary w-100" onclick="window.history.back();"
-                                style="background-color: #808080; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 15px; transition: background-color 0.3s ease, color 0.3s ease;"
-                                onmouseover="this.style.backgroundColor='#6c757d';"
-                                onmouseout="this.style.backgroundColor='#808080';"
-                                onmousedown="this.style.backgroundColor='#5a6268';"
-                                onmouseup="this.style.backgroundColor='#6c757d';">
-                                Trở lại
-                            </button>
+                            <a href="javascript:history.back()" class="btn btn-secondary w-100 custom-btn-size">Trở
+                                lại</a>
                         </div>
-
-
                         @csrf
                     </form>
 
